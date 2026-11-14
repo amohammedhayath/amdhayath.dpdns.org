@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Inspo MCP Extracted Tokens: basement-studio × matveyan-com (Obsidian & Burnished Copper-Amber) */
+  --bg-canvas: #0a0a0a;
+  --bg-surface: #141619;
+  --bg-surface-elevated: #1c2026;
+  --bg-surface-glass: rgba(20, 22, 25, 0.76);
+
+  /* Structural & Terminal Borders */
+  --border-subtle: #262a33;
+  --border-strong: #373c4b;
+  --border-highlight: #cd8656;
+
+  /* Typographic Hierarchy */
+  --text-primary: #fefefe;
+  --text-secondary: #c4c4c4;
+  --text-muted: #8c92a4;
+
+  /* Focal & Environmental Accents */
+  --accent-primary: #f59e0b;
+  --accent-secondary: #cd8656;
+  --accent-tertiary: #a82c15;
+  --accent-status: #10b981;
+
+  /* Spatial & Corner Tokens */
+  --radius-terminal: 4px;
+  --radius-bento: 12px;
+}
+
+@layer base {
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(245, 158, 11, 0.25);
+    color: #fefefe;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 20px 20px;
+    background-image: radial-gradient(
+      rgba(254, 254, 254, 0.065) 1px,
+      transparent 1px
+    );
+  }
+
+  .terminal-dashed-btn {
+    border: 1px dashed rgba(205, 134, 86, 0.55);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .terminal-dashed-btn:hover {
+    border-color: var(--accent-primary);
+    background-color: rgba(205, 134, 86, 0.09);
+  }
+}
